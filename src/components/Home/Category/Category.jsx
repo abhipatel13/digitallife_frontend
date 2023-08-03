@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const Category = ({categories}) => {
   const navigate = useNavigate();
-  console.log("Category",categories?.data?.data[0]?.attributes.img.data.attributes.url);
     return (
         <div className="shop-by-category">
           <div className="categories">
