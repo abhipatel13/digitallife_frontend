@@ -13,6 +13,7 @@ import useFetch from "../../hooks/useFetch";
 import { useState , useContext } from "react";
 import { Context } from "../../utils/context";
 import Cart from "../Cart/Cart";
+import Loading from "../Loading/Loading";
 
 const SingleProduct = () => {
     const [quantity,setQuantity] = useState(1);
@@ -29,11 +30,12 @@ const SingleProduct = () => {
     }
     return (
         <>
-        <div className="single-product-main-content">
+        {
+            data?.data ? <div className="single-product-main-content">
             <div className="layout">
                 <div className="single-product-page">
                     <div className="left">
-                        <img src={process.env.REACT_APP_DEV_URL + data?.data?.data?.attributes?.img.data[0].attributes.url} />
+                        <img src={data?.data?.data?.attributes?.img.data[0].attributes.url} />
                     </div>
                     <div className="right">
                         <div className="name">{data?.data.data.attributes.title}</div>
@@ -71,7 +73,9 @@ const SingleProduct = () => {
                 </div>
                 <RelatedProducts productData={data?.data}/>
             </div>
-        </div>
+        </div> : <Loading/>
+        }
+        
         {showCart && <Cart setShowCart={setShowCart}/>}
         </>
     )

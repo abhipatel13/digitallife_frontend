@@ -1,0 +1,18 @@
+@import "../../css-config/mixins.scss";
+
+.about-section{
+    padding: 40px 0px;
+    position: relative;
+    @include md{
+        height: calc(100vh - 80px);
+    }
+    .content{
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: left;
+        padding-left: 10px;
+        margin-top: -10px;
+    }
+}

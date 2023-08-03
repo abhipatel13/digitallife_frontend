@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./Category.scss";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../Loading/Loading";
 
 const Category = ({categories}) => {
   const navigate = useNavigate();
@@ -8,11 +9,11 @@ const Category = ({categories}) => {
         <div className="shop-by-category">
           <div className="categories">
           {
-            categories?.data && categories.data.data.map((item)=>(
+            categories?.data ? categories.data.data.map((item)=>(
             <div key={item.id} className="category" onClick={() => navigate(`/category/${item.id}`)}>
                 <img src={item?.attributes?.img?.data?.attributes?.url} alt=""/>
             </div>
-            ))
+            )) : <Loading/>
           }
           </div>
         </div>

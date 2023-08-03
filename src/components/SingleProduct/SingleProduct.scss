@@ -123,9 +123,10 @@
                         justify-content: center;
                         cursor: pointer;
                         font-size: 16px;
-                        color: white;
-                        background: #8e2de2;
-                        border-bottom: 3px solid #6516aa;
+                        color: black;
+                        font-weight: bolder;
+                        background: #61ff18;
+                        border-bottom: 3px solid #61ff18;
                         flex-grow: 1;
                         @include md{
                             flex-grow: unset;

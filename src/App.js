@@ -8,9 +8,9 @@ import Header from './components/Header/Header';
 import Newsletter from './components/Footer/Newsletter/Newsletter'
 import Products from './components/Products/Products';
 import AppContext from './utils/context'
-import { useEffect } from 'react';
+import ScrollToTop from './components/ScrollToTop';
 
-function App() {
+function App() {    
     return <>
         <BrowserRouter>
             <AppContext>
@@ -22,6 +22,7 @@ function App() {
                 </Routes>
                 <Newsletter />
                 <Footer />
+                <ScrollToTop/>
             </AppContext>
         </BrowserRouter>
     </>
